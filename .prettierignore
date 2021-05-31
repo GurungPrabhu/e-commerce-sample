@@ -11,15 +11,6 @@ logs
 
 package-lock.json
 node_modules
-bower_components
-
-*.sublime*
-
-psd
-thumb
-sketch
-
-.env
 
 # build
 /build
