@@ -2,10 +2,12 @@ import React, { useState } from "react"
 import Image from "../../elements/image"
 import Button from "../../elements/button"
 import PropTypes from "prop-types"
+import { useHistory } from "react-router"
 
 const ProductCard = ({ product }) => {
   const [priceIsVisible, setPriceVisible] = useState(true)
   const [btnIsVisible, setBtnVisible] = useState(false)
+  const history = useHistory()
 
   const handleOnMouseEnter = () => {
     setPriceVisible(false)
@@ -17,12 +19,16 @@ const ProductCard = ({ product }) => {
     setPriceVisible(true)
   }
 
+  const handleOnMouseClick = () => {
+    history.push(`/product-detail/${product.id}`)
+  }
+
   return (
     <div
       className="product-card m-2 text-center"
       onMouseEnter={handleOnMouseEnter}
       onMouseLeave={handleOnMouseLeave}>
-      <div className="product-card-body row">
+      <div className="product-card-body row" onClick={handleOnMouseClick}>
         <div className="col align-self-center">
           <Image src={product?.image || ""} height="auto" width="200" />
         </div>

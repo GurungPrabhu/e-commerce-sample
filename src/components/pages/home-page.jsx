@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import getProducts from "../../services/product.api"
+import { getProducts } from "../../services/product.api"
 import Button from "../elements/button"
 import ProductList from "../templates/product-list"
 

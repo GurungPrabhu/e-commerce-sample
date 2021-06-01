@@ -4,4 +4,8 @@ const getProducts = () => {
   return axios.get(`/products`)
 }
 
-export default getProducts
+const getProductById = (id) => {
+  return axios.get(`/products/${id}`)
+}
+
+export { getProducts, getProductById }

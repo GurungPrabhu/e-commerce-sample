@@ -11,8 +11,8 @@ function App() {
         <Header imageSrc="/logo.png" title="Alienware" />
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route exact path="/product-detail" component={ProductDetail} />
-          <Route exact path="./Check-out" component={CheckOut} />
+          <Route exact path="/product-detail/:id" component={ProductDetail} />
+          <Route exact path="/check-out" component={CheckOut} />
         </Switch>
         <Footer />
       </div>

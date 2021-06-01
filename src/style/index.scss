@@ -52,4 +52,24 @@ body {
 #home-page {
   min-height: 100vh;
 }
+
+#product-detail {
+  min-height: 100vh;
+}
+
+#cart-list-item {
+  width: 100%;
+  height: auto;
+  border-radius: 30px;
+}
+
+.cart-text-align-middle {
+  vertical-align: -webkit-baseline-middle;
+  vertical-align: -moz-middle-with-baseline;
+}
+
+.product-description {
+  min-height: 350px;
+}
+
 @import "bootstrap/dist/css/bootstrap.min.css";
