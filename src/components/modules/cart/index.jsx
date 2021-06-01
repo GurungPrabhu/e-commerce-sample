@@ -1,16 +1,28 @@
 import React from "react"
-import Button from "../../elements/button"
+import CartListItem from "./lib/cart-list-item"
 
 const Cart = () => {
   return (
-    <>
-      <Button type="light" onClick={() => {}}>
-        <div>
-          <i className="fa fa-shopping-cart fa-lg m-2" aria-hidden="true" />
-          <span>Cart</span>
-        </div>
-      </Button>
-    </>
+    <div className="row">
+      <h1>Cart</h1>
+      <ul className="list-group">
+        <li className="list-group-item">
+          <CartListItem />
+        </li>
+        <li className="list-group-item">
+          <CartListItem />
+        </li>
+        <li className="list-group-item">
+          <div className="row p-2">
+            <div className="col">
+              <span>
+                <strong>Grand total: 5000</strong>
+              </span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
   )
 }
 

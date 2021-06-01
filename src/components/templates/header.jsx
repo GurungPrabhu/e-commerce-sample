@@ -2,7 +2,7 @@ import React from "react"
 import Image from "../elements/image"
 import { Link } from "react-router-dom"
 import PropTypes from "prop-types"
-import Cart from "../modules/cart"
+import Cart from "../modules/cart-button"
 
 const Header = ({ imageSrc, title }) => {
   return (

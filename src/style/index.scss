@@ -60,7 +60,7 @@ body {
 #cart-list-item {
   width: 100%;
   height: auto;
-  border-radius: 30px;
+  border-radius: 15px;
 }
 
 .cart-text-align-middle {
@@ -70,6 +70,10 @@ body {
 
 .product-description {
   min-height: 350px;
+}
+
+#checkout {
+  min-height: 100vh;
 }
 
 @import "bootstrap/dist/css/bootstrap.min.css";
