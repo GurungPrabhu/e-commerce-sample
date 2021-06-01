@@ -1,8 +1,9 @@
 import React, { useState } from "react"
 import Image from "../../elements/image"
 import Button from "../../elements/button"
+import PropTypes from "prop-types"
 
-const ProductCard = () => {
+const ProductCard = ({ product }) => {
   const [priceIsVisible, setPriceVisible] = useState(true)
   const [btnIsVisible, setBtnVisible] = useState(false)
 
@@ -23,19 +24,19 @@ const ProductCard = () => {
       onMouseLeave={handleOnMouseLeave}>
       <div className="product-card-body row">
         <div className="col align-self-center">
-          <Image src="./products/product-1.png" height="auto" width="200" />
+          <Image src={product?.image || ""} height="auto" width="200" />
         </div>
       </div>
       <div className="row my-2">
         <div className="col-12 mb-2">
-          <span>Play Station 5</span>
+          <span>{product?.name}</span>
         </div>
         <div
           className={`product-card-text col-12 mb-2 ${
             priceIsVisible ? "is-visible " : "d-none"
           }`}>
           <span className="text-muted">
-            <small>Rs 50000 </small>
+            <small>Rs {product?.price} </small>
           </span>
         </div>
         <div
@@ -49,4 +50,13 @@ const ProductCard = () => {
   )
 }
 
+ProductCard.propTypes = {
+  product: PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    description: PropTypes.string,
+    image: PropTypes.string,
+    name: PropTypes.name
+  }).isRequired
+}
 export default ProductCard

@@ -1,11 +1,11 @@
 import React from "react"
 import ProductList from "../templates/product-list"
 
-const CheckOut = () => {
+const HomePage = () => {
   return (
     <>
       <ProductList />
     </>
   )
 }
-export default CheckOut
+export default HomePage
