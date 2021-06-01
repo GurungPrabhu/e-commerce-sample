@@ -9,7 +9,6 @@ body {
 
 .footer {
   left: 0;
-  position: fixed;
   bottom: 0;
   width: 100%;
 }
@@ -50,4 +49,7 @@ body {
   min-height: 200px;
 }
 
+#home-page {
+  min-height: 100vh;
+}
 @import "bootstrap/dist/css/bootstrap.min.css";

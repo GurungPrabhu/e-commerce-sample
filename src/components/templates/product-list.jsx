@@ -2,7 +2,7 @@ import React from "react"
 import ProductCard from "../modules/product-card"
 import PropTypes from "prop-types"
 
-const ProductList = ({ productList }) => {
+const ProductList = ({ productList, loading }) => {
   return (
     <div className="container m-auto">
       <div className="row">
@@ -16,7 +16,7 @@ const ProductList = ({ productList }) => {
         {productList.map((item) => (
           <ProductCard product={item} key={item.id || 0} />
         ))}
-        {productList.length === 0 && (
+        {productList.length === 0 && !loading && (
           <div className="col-12 text-center">
             <p>Sorry, we are out of product!</p>
           </div>
@@ -27,11 +27,13 @@ const ProductList = ({ productList }) => {
 }
 
 ProductList.propTypes = {
-  productList: PropTypes.arrayOf(PropTypes.object)
+  productList: PropTypes.arrayOf(PropTypes.object),
+  loading: PropTypes.bool
 }
 
 ProductList.defaultProps = {
-  productList: []
+  productList: [],
+  loading: false
 }
 
 export default ProductList
