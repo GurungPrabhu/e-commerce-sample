@@ -1,7 +1,11 @@
 import React from "react"
+import ProductList from "../templates/product-list"
 
 const CheckOut = () => {
-  return <>Home Page</>
+  return (
+    <>
+      <ProductList />
+    </>
+  )
 }
-
 export default CheckOut
