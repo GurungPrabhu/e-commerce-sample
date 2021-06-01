@@ -2,7 +2,15 @@ body {
   font-family: "Saira Condensed", sans-serif;
   font-weight: 500;
 }
+
 .btn {
   border-radius: 1.5rem;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 @import "bootstrap/dist/css/bootstrap.min.css";

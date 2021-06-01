@@ -1,6 +1,7 @@
 import React from "react"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
-import { HomePage, ProductDetail, CheckOut } from "./components/pages"
+import { HomePage, ProductDetail, CheckOut } from "../src/components/pages"
+import Footer from "./components/templates/footer"
 import Header from "./components/templates/header"
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
           <Route exact path="/product-detail" component={ProductDetail} />
           <Route exact path="./Check-out" component={CheckOut} />
         </Switch>
+        <Footer />
       </div>
     </Router>
   )
