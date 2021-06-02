@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { removeFromCartAction } from "../../../redux/actions/cart"
+import { useNotification } from "../../context/notification.context"
 import CartListItem from "./lib/cart-list-item"
 
 const Cart = () => {
   const cart = useSelector((store) => store.cart)
   const [grandTotal, setGrandTotal] = useState(0)
+  const dispatch = useDispatch()
+  const [makeNotification] = useNotification()
 
   useEffect(() => {
     setGrandTotal(calculateGrandTotals(cart.products || []))
@@ -17,6 +21,12 @@ const Cart = () => {
     })
     return grandTotal
   }
+
+  const handleOnRemoveProductFromCart = (id) => {
+    dispatch(removeFromCartAction(id))
+    makeNotification("Prodcut removed successfully!", "success")
+  }
+
   return (
     <div className="row">
       <h1>Cart</h1>
@@ -24,7 +34,10 @@ const Cart = () => {
         {cart.products.map((product) => {
           return (
             <li className="list-group-item" key={product.id}>
-              <CartListItem product={product} />
+              <CartListItem
+                product={product}
+                onClick={handleOnRemoveProductFromCart}
+              />
             </li>
           )
         })}
