@@ -5,6 +5,7 @@ import Button from "../../elements/button"
 import PropTypes from "prop-types"
 import { useHistory } from "react-router"
 import { addToCart } from "../../../redux/actions/cart"
+import { useNotification } from "../../context/notification.context"
 
 const ProductCard = ({ product }) => {
   const [priceIsVisible, setPriceVisible] = useState(true)
@@ -12,6 +13,7 @@ const ProductCard = ({ product }) => {
   const history = useHistory()
   const cart = useSelector((store) => store.cart)
   const dispatch = useDispatch()
+  const [notification] = useNotification()
 
   const handleOnMouseEnter = () => {
     setPriceVisible(false)
@@ -29,8 +31,15 @@ const ProductCard = ({ product }) => {
 
   const handleOnClickAddToCart = () => {
     if (cart.products.some((item) => item.id === product.id))
-      console.log("product already on cart")
-    else dispatch(addToCart(product))
+      notification("Product already on Cart", "error")
+    else
+      dispatch(addToCart(product))
+        .then((res) => {
+          if (res) notification("Product added to Cart", "success")
+        })
+        .catch((err) => {
+          notification(err.message, "error")
+        })
   }
 
   return (

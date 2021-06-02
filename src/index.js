@@ -5,11 +5,14 @@ import ReactDOM from "react-dom"
 import { store } from "./redux/store"
 import App from "./app"
 import { Provider } from "react-redux"
+import NotificationProvider from "./components/context/notification.context"
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <NotificationProvider>
+        <App />
+      </NotificationProvider>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")

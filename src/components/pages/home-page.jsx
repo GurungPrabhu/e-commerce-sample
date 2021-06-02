@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { getProducts } from "../../services/product.api"
 import Button from "../elements/button"
 import ProductList from "../templates/product-list"
+import { useNotification } from "../context/notification.context"
 
 const DUMMY_PRODUCT_LIMIT = 9
 
@@ -9,6 +10,7 @@ const HomePage = () => {
   const [productList, setProductList] = useState([])
   const [loading, setLoading] = useState(true)
   const [paginationLimit, setPaginationLimit] = useState(6)
+  const [notification] = useNotification()
 
   const fetchProducts = () => {
     setLoading(true)
@@ -18,7 +20,7 @@ const HomePage = () => {
         setLoading(false)
       })
       .catch((err) => {
-        console.log(err)
+        notification(err.message, err)
         setLoading(false)
       })
   }

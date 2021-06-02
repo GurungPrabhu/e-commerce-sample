@@ -5,11 +5,13 @@ import PropTypes from "prop-types"
 import { useDispatch, useSelector } from "react-redux"
 import { addToCart, changeProductOnCart } from "../../../redux/actions/cart"
 import { useHistory } from "react-router"
+import { useNotification } from "../../context/notification.context"
 
 const ProductDetail = ({ product }) => {
   const cart = useSelector((store) => store.cart)
   const dispatch = useDispatch()
   const history = useHistory()
+  const [notification] = useNotification()
 
   const isInCart = (product) => {
     if (cart.products.some((item) => item.id === product.id)) return true
@@ -17,13 +19,35 @@ const ProductDetail = ({ product }) => {
   }
 
   const handleOnClickAddToCart = (quantity) => {
-    console.log("hello world", isInCart(product))
-    if (isInCart(product)) dispatch(changeProductOnCart(product, quantity))
-    else dispatch(addToCart(product, quantity))
+    if (isInCart(product)) {
+      dispatch(changeProductOnCart(product, quantity))
+        .then((res) => {
+          if (res) notification("Product updated successfully!", "success")
+        })
+        .catch((err) => {
+          notification(err.message, "error")
+        })
+    } else {
+      dispatch(addToCart(product, quantity))
+        .then((res) => {
+          if (res) notification("Product updated successfully!", "success")
+        })
+        .catch((err) => {
+          notification(err.message, "error")
+        })
+    }
   }
 
   const handleOnClickBuyNow = () => {
-    if (!isInCart(product)) dispatch(addToCart(product, 1))
+    if (!isInCart(product)) {
+      dispatch(addToCart(product, 1))
+        .then((res) => {
+          if (res) notification("Product added successfully!", "success")
+        })
+        .catch((err) => {
+          notification(err.message, "error")
+        })
+    }
     history.push("/check-out")
   }
 

@@ -39,27 +39,22 @@ const addToCart =
   (product, quantity = 1) =>
   (dispatch) => {
     let cartProduct = changeProductObjToCartObj(product, quantity)
-    validateProductAvailabilityFromServer(cartProduct)
-      .then((res) => {
-        console.log("res", res)
-        if (res) dispatch(addToCartAction(cartProduct))
-        else throw Error("Product Quantity not avaliable!")
-      })
-      .catch((err) => {
-        console.log(err)
-      })
+    return validateProductAvailabilityFromServer(cartProduct).then((res) => {
+      if (res) {
+        dispatch(addToCartAction(cartProduct))
+        return true
+      } else throw Error("Product Quantity not avaliable!")
+    })
   }
 
 const changeProductOnCart = (product, quantity) => (dispatch) => {
   let cartProduct = changeProductObjToCartObj(product, quantity)
-  validateProductAvailabilityFromServer(cartProduct)
-    .then((res) => {
-      if (res) dispatch(changeProductOnCartAction(cartProduct))
-      else throw Error("Product Quantitiy not available")
-    })
-    .catch((err) => {
-      console.log(err)
-    })
+  return validateProductAvailabilityFromServer(cartProduct).then((res) => {
+    if (res) {
+      dispatch(changeProductOnCartAction(cartProduct))
+      return true
+    } else throw Error("Product Quantitiy not available")
+  })
 }
 
 export { addToCart, removeFromCartAction, changeProductOnCart }
