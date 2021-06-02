@@ -34,12 +34,12 @@ const ProductDetail = () => {
     <div id="product-detail" className="container py-4">
       <BreadCrumb data={[...BREADCRUMB_DATA, { name: product?.name }]} />
       <div className="row">
-        <div className="col-6">
+        <div className="col-12  col-sm-12 col-md-6">
           <div className="col align-self-center p-4">
             <Image src={product?.image || ""} height="auto" width="500" />
           </div>
         </div>
-        <div className="col-6">
+        <div className="col-12 col-sm-12 col-md-6">
           <ProductDetailBody product={product} />
         </div>
       </div>

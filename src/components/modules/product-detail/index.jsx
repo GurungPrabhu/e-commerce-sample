@@ -17,13 +17,13 @@ const ProductDetail = ({ product }) => {
         </div>
       </div>
       <div className="row">
-        <div className="col-9">
+        <div className="col-12 col-lg-9">
           <CartListItem
             perPrice={product?.price || 0}
             totalQuantity={product?.quantity || 0}
           />
         </div>
-        <div className="col-3 text-center p-auto p-4">
+        <div className="col-12 col-lg-3 text-center p-auto p-4">
           <Button onClick={() => {}}>Buy Now</Button>
         </div>
       </div>

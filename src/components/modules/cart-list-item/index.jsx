@@ -26,8 +26,8 @@ const CartListItem = ({ perPrice, totalQuantity }) => {
 
   return (
     <div id="cart-list-item" className="border">
-      <div className="row p-4 px-5">
-        <div className="col-4 ">
+      <div className="row p-4 px-5 pt-3">
+        <div className="col-12 col-lg-4 ">
           <Select
             value={componentQuantity}
             onChange={handleQuantityChange}
@@ -39,12 +39,12 @@ const CartListItem = ({ perPrice, totalQuantity }) => {
             ))}
           </Select>
         </div>
-        <div className="col-4 align-center">
+        <div className="col-12 col-lg-4 align-center pt-3">
           <span className="cart-text-align-middle">
             Price: {componentQuantity * parseInt(perPrice)} rs
           </span>
         </div>
-        <div className="col-4">
+        <div className="col-12 col-lg-4 pt-3">
           <Button onClick={handleBuyNowClick}>Add to Cart </Button>
         </div>
       </div>
