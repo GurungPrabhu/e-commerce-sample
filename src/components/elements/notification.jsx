@@ -41,7 +41,7 @@ const Notification = ({ message, type, isOpen, onClose }) => {
 
 Notification.propTypes = {
   message: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(["error", "success"]),
+  type: PropTypes.oneOf(["error", "success", ""]),
   isOpen: PropTypes.bool,
   onClose: PropTypes.func.isRequired
 }

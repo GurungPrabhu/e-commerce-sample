@@ -27,10 +27,11 @@ const CartListItem = ({ product }) => {
 CartListItem.propTypes = {
   product: PropTypes.shape({
     name: PropTypes.string,
-    quantity: PropTypes.string,
-    price: PropTypes.number,
-    total: PropTypes.number,
-    image: PropTypes.string
+    quantity: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+      .isRequired,
+    price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    total: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    image: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired
   }).isRequired
 }
 

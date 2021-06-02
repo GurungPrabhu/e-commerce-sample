@@ -22,7 +22,7 @@ Select.propTypes = {
   children: PropTypes.any.isRequired,
   label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired
 }
 
 export default Select

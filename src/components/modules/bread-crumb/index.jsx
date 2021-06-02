@@ -44,11 +44,13 @@ const BreadCrumb = ({ data }) => {
 }
 
 BreadCrumb.propTypes = {
-  data: PropTypes.shape({
-    url: PropTypes.string,
-    name: PropTypes.string,
-    map: PropTypes.func
-  })
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      url: PropTypes.string,
+      name: PropTypes.string,
+      map: PropTypes.func
+    })
+  )
 }
 
 BreadCrumb.defaultProps = {

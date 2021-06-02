@@ -81,11 +81,11 @@ const ProductDetail = ({ product }) => {
 
 ProductDetail.propTypes = {
   product: PropTypes.shape({
-    id: PropTypes.string,
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     name: PropTypes.string,
     description: PropTypes.string,
-    price: PropTypes.number,
-    quantity: PropTypes.number
+    price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    quantity: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
   })
 }
 

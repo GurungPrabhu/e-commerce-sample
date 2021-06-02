@@ -15,9 +15,16 @@ const Button = ({ type, onClick, htmlType, children, size, outline }) => {
 }
 
 Button.propTypes = {
-  type: PropTypes.oneOf(["primary", "secondary", "danger", "light", "dark"]),
-  size: PropTypes.oneOf(["lg", "sm"]),
-  onClick: PropTypes.func.isRequired,
+  type: PropTypes.oneOf([
+    "primary",
+    "secondary",
+    "danger",
+    "light",
+    "dark",
+    ""
+  ]),
+  size: PropTypes.oneOf(["lg", "sm", ""]),
+  onClick: PropTypes.func,
   htmlType: PropTypes.oneOf(["submit", "button"]),
   children: PropTypes.any.isRequired,
   outline: PropTypes.bool

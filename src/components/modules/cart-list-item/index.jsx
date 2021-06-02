@@ -51,8 +51,10 @@ const CartListItem = ({ perPrice, totalQuantity, onClick }) => {
 }
 
 CartListItem.propTypes = {
-  totalQuantity: PropTypes.number,
-  perPrice: PropTypes.number,
+  totalQuantity: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    .isRequired,
+  perPrice: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    .isRequired,
   onClick: PropTypes.func.isRequired
 }
 
