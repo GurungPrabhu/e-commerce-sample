@@ -1,10 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-const Button = ({ type, onClick, htmlType, children, size }) => {
+const Button = ({ type, onClick, htmlType, children, size, outline }) => {
   return (
     <button
-      className={`btn btn-${type} btn-${size.length > 0 ? size : ""}`}
+      className={`btn ${outline ? `btn-outline-${type}` : `btn-${type}`} btn-${
+        size.length > 0 ? size : ""
+      }`}
       type={htmlType}
       onClick={onClick}>
       {children}
@@ -17,13 +19,15 @@ Button.propTypes = {
   size: PropTypes.oneOf(["lg", "sm"]),
   onClick: PropTypes.func.isRequired,
   htmlType: PropTypes.oneOf(["submit", "button"]),
-  children: PropTypes.any.isRequired
+  children: PropTypes.any.isRequired,
+  outline: PropTypes.bool
 }
 
 Button.defaultProps = {
   type: "primary",
   htmlType: "button",
-  size: ""
+  size: "",
+  outline: false
 }
 
 export default Button

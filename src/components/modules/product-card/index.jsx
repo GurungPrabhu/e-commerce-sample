@@ -1,13 +1,17 @@
 import React, { useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
 import Image from "../../elements/image"
 import Button from "../../elements/button"
 import PropTypes from "prop-types"
 import { useHistory } from "react-router"
+import { addToCart } from "../../../redux/actions/cart"
 
 const ProductCard = ({ product }) => {
   const [priceIsVisible, setPriceVisible] = useState(true)
   const [btnIsVisible, setBtnVisible] = useState(false)
   const history = useHistory()
+  const cart = useSelector((store) => store.cart)
+  const dispatch = useDispatch()
 
   const handleOnMouseEnter = () => {
     setPriceVisible(false)
@@ -21,6 +25,12 @@ const ProductCard = ({ product }) => {
 
   const handleOnMouseClick = () => {
     history.push(`/product-detail/${product.id}`)
+  }
+
+  const handleOnClickAddToCart = () => {
+    if (cart.products.some((item) => item.id === product.id))
+      console.log("product already on cart")
+    else dispatch(addToCart(product))
   }
 
   return (
@@ -49,7 +59,9 @@ const ProductCard = ({ product }) => {
           className={`col-12 mb-2 ${
             btnIsVisible ? "is-visible" : "is-not-visible"
           }`}>
-          <Button type="dark">Add to cart</Button>
+          <Button type="dark" onClick={handleOnClickAddToCart}>
+            Add to cart
+          </Button>
         </div>
       </div>
     </div>

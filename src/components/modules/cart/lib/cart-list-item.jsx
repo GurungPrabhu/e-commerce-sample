@@ -1,26 +1,37 @@
 import React from "react"
 import Image from "../../../elements/image"
+import PropTypes from "prop-types"
 
-const CartListItem = () => {
+const CartListItem = ({ product }) => {
   return (
     <div className="row p-3">
       <div className="col">
-        <Image src="/products/product-1.png" width="100" height="auto" />
+        <Image src={product?.image || ""} width="100" height="auto" />
       </div>
       <div className="col text-center">
         <span>
-          <strong>Play Station </strong>
+          <strong>{product?.name || ""}</strong>
         </span>
       </div>
       <div className="col text-center">
-        <span>Qty: 5</span>
+        <span>Qty: {product?.quantity || ""}</span>
       </div>
       <div className="col text-center">
-        <span>Per: 1000</span>
+        <span>Per: {product?.price || ""}</span>
       </div>
-      <div className="col text-center">Total: 2000</div>
+      <div className="col text-center">Total: {product?.total || ""}</div>
     </div>
   )
+}
+
+CartListItem.propTypes = {
+  product: PropTypes.shape({
+    name: PropTypes.string,
+    quantity: PropTypes.string,
+    price: PropTypes.number,
+    total: PropTypes.number,
+    image: PropTypes.string
+  }).isRequired
 }
 
 export default CartListItem

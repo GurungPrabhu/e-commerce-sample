@@ -2,18 +2,16 @@ import React, { useState } from "react"
 import Button from "../../elements/button"
 import Select from "../../elements/select"
 import PropTypes from "prop-types"
-import { useHistory } from "react-router"
 
-const CartListItem = ({ perPrice, totalQuantity }) => {
+const CartListItem = ({ perPrice, totalQuantity, onClick }) => {
   const [componentQuantity, setQuantity] = useState(1)
-  const history = useHistory()
 
   const handleQuantityChange = (e) => {
     setQuantity(e.target.value)
   }
 
-  const handleBuyNowClick = () => {
-    history.push("/check-out")
+  const handleOnClickAddToCart = () => {
+    onClick(componentQuantity)
   }
 
   const getNumberArray = (limit) => {
@@ -45,7 +43,7 @@ const CartListItem = ({ perPrice, totalQuantity }) => {
           </span>
         </div>
         <div className="col-12 col-lg-4 pt-3">
-          <Button onClick={handleBuyNowClick}>Add to Cart </Button>
+          <Button onClick={handleOnClickAddToCart}>Add to Cart </Button>
         </div>
       </div>
     </div>
@@ -54,18 +52,13 @@ const CartListItem = ({ perPrice, totalQuantity }) => {
 
 CartListItem.propTypes = {
   totalQuantity: PropTypes.number,
-  totalPrice: PropTypes.number,
   perPrice: PropTypes.number,
-  quantity: PropTypes.number,
-  forProductDetail: PropTypes.bool
+  onClick: PropTypes.func.isRequired
 }
 
 CartListItem.defaultProps = {
   totalQuantity: 10,
-  totalPrice: 0,
-  perPrice: 100,
-  quantity: 0,
-  forProductDetail: true
+  perPrice: 0
 }
 
 export default CartListItem
