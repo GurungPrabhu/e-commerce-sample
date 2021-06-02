@@ -71,7 +71,7 @@ const ProductDetail = ({ product }) => {
             totalQuantity={product?.quantity || 0}
           />
         </div>
-        <div className="col-12 col-lg-3 text-center p-auto p-4">
+        <div className="col-12 col-lg-3 text-center p-auto p-4 mt-2">
           <Button onClick={handleOnClickBuyNow}>Buy Now</Button>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import Image from "../../elements/image"
 import Button from "../../elements/button"
@@ -14,15 +14,20 @@ const ProductCard = ({ product }) => {
   const cart = useSelector((store) => store.cart)
   const dispatch = useDispatch()
   const [notification] = useNotification()
+  const [isTablet, setIsTablet] = useState(false)
 
   const handleOnMouseEnter = () => {
-    setPriceVisible(false)
-    setBtnVisible(true)
+    if (!isTablet) {
+      setPriceVisible(false)
+      setBtnVisible(true)
+    }
   }
 
   const handleOnMouseLeave = () => {
-    setBtnVisible(false)
-    setPriceVisible(true)
+    if (!isTablet) {
+      setBtnVisible(false)
+      setPriceVisible(true)
+    }
   }
 
   const handleOnMouseClick = () => {
@@ -41,6 +46,14 @@ const ProductCard = ({ product }) => {
           notification(err.message, "error")
         })
   }
+
+  useEffect(() => {
+    if (window.innerWidth <= 991) {
+      setPriceVisible(true)
+      setBtnVisible(true)
+      setIsTablet(true)
+    }
+  }, [])
 
   return (
     <div

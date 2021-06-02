@@ -15,10 +15,10 @@ const CheckOut = () => {
     <div id="checkout" className="container">
       <BreadCrumb data={[...BREADCRUMB_DATA, { name: "Check-out" }]} />
       <div className="row">
-        <div className="col-6 px-4">
+        <div className="col-md-12 col-lg-6 px-4">
           <Cart />
         </div>
-        <div className="col-6 px-4">
+        <div className="col-md-12 col-lg-6 px-4">
           <CheckoutForm />
         </div>
       </div>

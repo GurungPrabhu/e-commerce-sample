@@ -8,7 +8,7 @@ const Image = ({ width, alt, height, src }) => {
       alt={alt}
       width={width}
       height={height}
-      className="d-inline-block mx-2"
+      className="d-inline-block mx-2 img-fluid"
     />
   )
 }
