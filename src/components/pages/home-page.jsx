@@ -39,11 +39,12 @@ const HomePage = () => {
       />
       <div className="row m-3">
         <div className="col-12 text-center">
-          {paginationLimit < DUMMY_PRODUCT_LIMIT && (
-            <Button type="dark" onClick={onClickLoadMore}>
-              Load More
-            </Button>
-          )}
+          {productList.length === 0 ||
+            (paginationLimit < DUMMY_PRODUCT_LIMIT && (
+              <Button type="dark" onClick={onClickLoadMore}>
+                Load More
+              </Button>
+            ))}
         </div>
       </div>
     </div>
