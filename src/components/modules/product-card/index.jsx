@@ -26,7 +26,7 @@ const ProductCard = ({ product }) => {
   const handleOnMouseLeave = () => {
     if (!isTablet) {
       setBtnVisible(false)
-      setPriceVisible(true)
+      setTimeout(() => setPriceVisible(true), 300)
     }
   }
 
