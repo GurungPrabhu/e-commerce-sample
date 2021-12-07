@@ -16,7 +16,7 @@ const CheckoutForm = () => {
   const onSubmit = (e) => {
     e.preventDefault()
     console.log("data", formData)
-    makeNotification("Order Successfull", "success")
+    makeNotification("Order Successful", "success")
   }
 
   return (

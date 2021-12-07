@@ -43,7 +43,7 @@ const addToCart =
       if (res) {
         dispatch(addToCartAction(cartProduct))
         return true
-      } else throw Error("Product Quantity not avaliable!")
+      } else throw Error("Product Quantity not available!")
     })
   }
 
@@ -53,7 +53,7 @@ const changeProductOnCart = (product, quantity) => (dispatch) => {
     if (res) {
       dispatch(changeProductOnCartAction(cartProduct))
       return true
-    } else throw Error("Product Quantitiy not available")
+    } else throw Error("Product Quantity not available")
   })
 }
 
