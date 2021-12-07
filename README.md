@@ -19,4 +19,4 @@ This project represents Front-end part of simple E-commerce website. Its provide
 3. Checkout with products
 4. Cart management
 
-[DEMO](https://vercel.com/gurungprabhu/e-commerce-sample)
+[DEMO](https://e-commerce-sample-sepia.vercel.app/)
