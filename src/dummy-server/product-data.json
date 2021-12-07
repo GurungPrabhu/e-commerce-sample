@@ -4,7 +4,7 @@
       "id": 8,
       "name": "Playstation 5",
       "price": "50000",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "description": "The PlayStation 5 (PS5) is a home video game console developed by Sony Interactive Entertainment. Announced in 2019 as the successor to the PlayStation 4, the PS5 was released on November 12, 2020, in Australia, Japan, New Zealand, North America, and South Korea, with worldwide release following a week later. The PS5 is part of the ninth generation of video game consoles, along with Microsoft's Xbox Series X and Series S consoles, which were released in the same month.",
       "quantity": 5,
       "image": "/products/product-1.png"
     },
@@ -12,7 +12,7 @@
       "id": 1,
       "price": "50000",
       "name": "JBL speaker",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "description": "Take your tunes on the go with the powerful JBL Flip 5. Our lightweight Bluetooth speaker goes anywhere. Bad weather? Not to worry. With its waterproof design, you can rock out to our signature sound rain or shine. Move more. Pair two JBL PartyBoost-compatible speakers together for stereo sound or link multiple JBL PartyBoost-compatible speakers to create a bigger party. Enjoy up to 12 hours of play time for your favorite music. Stand it vertical or horizontal and be bold with your choice of 11 vibrant colors.",
       "quantity": 5,
       "image": "/products/product-2.png"
     },
@@ -35,7 +35,7 @@
     {
       "id": 4,
       "price": "5001230",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "description": "Finished listening to music for now? With their foldable design, the WH-XB900N noise cancelling headphones are compact enough to pack away in your bag quickly and easily. It's easy to talk, even with your headphones on — a built-in mic enables you to take hands-free calls from selected smartphones. Just double tap the headphones' right housing to answer a call and swipe up or down to adjust the volume.",
       "name": "Sony Headphone",
       "quantity": 5,
       "image": "/products/product-5.png"

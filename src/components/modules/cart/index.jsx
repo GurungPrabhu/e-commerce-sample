@@ -24,7 +24,7 @@ const Cart = () => {
 
   const handleOnRemoveProductFromCart = (id) => {
     dispatch(removeFromCartAction(id))
-    makeNotification("Prodcut removed successfully!", "success")
+    makeNotification("Product removed successfully!", "success")
   }
 
   return (
